@@ -15,7 +15,8 @@ public class Boletin23{
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        Encender ventanaEncender=new Encender();
+//        Encender ventanaEncender=new Encender();
+        Titulo ventanaTitulo=new Titulo();
     }
     
 }

@@ -16,29 +16,28 @@ import javax.swing.JPanel;
  *
  * @author dani
  */
-public class Encender implements ActionListener{
+public class Titulo implements ActionListener{
 
     JFrame marco;
     JPanel panel;
-    JButton bencender;
-    JLabel msn;
+    JButton bprogramacion,bbases;
 
-    public Encender(){
-        marco=new JFrame("Probando eventos");
+    public Titulo(){
+        marco=new JFrame("CURSO DAM");
         panel=new JPanel();
-        bencender=new JButton("Encender");
-        msn=new JLabel("Encendiste el botón");
+        bprogramacion=new JButton("Programación");
+        bbases=new JButton("Bases");
 
         //Características
-        bencender.addActionListener(this); //Añadimos listener al desencadenante del evento.
-
+        bprogramacion.addActionListener(this); //Añadimos listener al desencadenante del evento.
+        bbases.addActionListener(this);
+        
         marco.setSize(400, 200);
-        panel.add(bencender);
-        panel.add(msn);
+        panel.add(bprogramacion);
+        panel.add(bbases);
         marco.add(panel);
 
         //Valores
-        msn.setVisible(false);
         marco.setLocationRelativeTo(marco);
         marco.setVisible(true);
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,6 +46,10 @@ public class Encender implements ActionListener{
 
     @Override
         public void actionPerformed(ActionEvent e){
-            msn.setVisible(true);
+            Object boton=e.getSource();
+            if(boton==bbases)
+                marco.setTitle("Bases de datos");
+            else
+                marco.setTitle("Programación");
     }
 }
