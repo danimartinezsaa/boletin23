@@ -9,34 +9,43 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
  *
  * @author dani
  */
-public class Titulo implements ActionListener{
+public class SaludoDespedida implements ActionListener{
 
     JFrame marco;
     JPanel panel;
-    JButton bprogramacion,bbases;
+    JButton bsaludo,bdespedida;
+    JLabel lsaludo,ldespedida;
 
-    public Titulo(){
+    public SaludoDespedida(){
         marco=new JFrame("CURSO DAM");
         panel=new JPanel();
-        bprogramacion=new JButton("Programación");
-        bbases=new JButton("Bases");
+        bsaludo=new JButton("Saludo");
+        bdespedida=new JButton("Despedida");
+        lsaludo=new JLabel("Un saludo a DAM");
+        ldespedida=new JLabel("Final del programa");
+        
 
         //Características
-        bprogramacion.addActionListener(this); //Añadimos listener al desencadenante del evento.
-        bbases.addActionListener(this);
+        bsaludo.addActionListener(this); //Añadimos listener al desencadenante del evento.
+        bdespedida.addActionListener(this);
         
         marco.setSize(400, 200);
-        panel.add(bprogramacion);
-        panel.add(bbases);
+        panel.add(bsaludo);
+        panel.add(bdespedida);
+        panel.add(lsaludo);
+        panel.add(ldespedida);
         marco.add(panel);
 
         //Valores
+        ldespedida.setVisible(false);
+        lsaludo.setVisible(false);
         marco.setLocationRelativeTo(marco);
         marco.setVisible(true);
         marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,9 +55,9 @@ public class Titulo implements ActionListener{
     @Override
         public void actionPerformed(ActionEvent e){
             Object boton=e.getSource();
-            if(boton==bbases)
-                marco.setTitle("Bases de datos");
+            if(boton==bsaludo)
+                lsaludo.setVisible(true);
             else
-                marco.setTitle("Programación");
+                ldespedida.setVisible(true);
     }
 }

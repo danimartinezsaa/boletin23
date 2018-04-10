@@ -16,7 +16,8 @@ public class Boletin23{
      */
     public static void main(String[] args){
 //        Encender ventanaEncender=new Encender();
-        Titulo ventanaTitulo=new Titulo();
+//        Titulo ventanaTitulo=new Titulo();
+          SaludoDespedida ventana=new SaludoDespedida();
     }
     
 }
