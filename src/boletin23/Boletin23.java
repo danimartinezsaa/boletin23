@@ -18,7 +18,7 @@ public class Boletin23{
 //        Encender ventanaEncender=new Encender();
 //        Titulo ventanaTitulo=new Titulo();
 //        SaludoDespedida ventana=new SaludoDespedida();
-          DobleVentana ventana=new DobleVentana();
+//        DobleVentana ventana=new DobleVentana();
     }
     
 }
